@@ -1,0 +1,42 @@
+{
+  "name": "@dreamworld/sysend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sysend.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DreamworldSolutions/sysend.git"
+  },
+  "keywords": [
+    "broadcast",
+    "messages"
+  ],
+  "author": "Dhruval Kodinariya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DreamworldSolutions/sysend/issues"
+  },
+  "homepage": "https://github.com/DreamworldSolutions/sysend#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "semantic-release": "17.0.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      {
+        "name": "feature/*",
+        "prerelease": "${name.replace(/^feature\\//g,\"\")}",
+        "channel": "${name.replace(/^feature\\//g,\"\")}"
+      }
+    ]
+  }
+}
