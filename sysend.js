@@ -1,6 +1,3 @@
-let module = {};
-let exports = {};
-
 /**@license
  *  sysend.js - send messages between browser windows/tabs version 1.3.4
  *
@@ -11,16 +8,8 @@ let exports = {};
  *  http://stackoverflow.com/q/24182409/387194
  *
  */
-/* global define, module, exports, localStorage, setTimeout */
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-      define(['sysend'], factory);
-  } else if (typeof exports === 'object') {
-      module.exports = factory();
-  } else {
-      root.sysend = factory();
-  }
-})(typeof window !== "undefined" ? window : this, function() {
+
+let sysendjs = function() {
   // we use prefix so `foo' event don't collide with `foo' locaStorage value
   var uniq_prefix = '___sysend___';
   var random_value = Math.random();
@@ -197,6 +186,6 @@ let exports = {};
           }
       }
   };
-});
+}
 
-export default module.exports;
+export default sysendjs();
